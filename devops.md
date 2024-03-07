@@ -49,71 +49,101 @@ Yes it can. DevOps enhances the Software Development Life Cycle (SDLC) by focusi
 
 
 
+# Assignment 2
 
-# Project 1
-## Installing apache and updating the firewall
+## Introduction to Operating Systems
 
-`sudo apt update` to update all the list of packages ![Sudo Apt Updste](./images/sudoapp.PNG)
-
-`sudo apt instal apache2` to install the apache package ![Installing Apache](./images/install_apache2.1.PNG)
-
-`sudo ufw app list` to list all currently available UFW application profiles ![UFW application profiles](./images/ufw_app_list.PNG)
-
-`sudo ufw allow in "Apache"` to allow traffic on port 80 to allow http traffics and `sudo ufw status` to verify the changes i made ![Traffic permission and changes verifivation](./images/Traffic_permission_and_changes%20_verfication.PNG)
-
-`sudo systemctl status apache2 ` to confrim if the apache is running as a service in our operating system ![Apache Status](./images/Apache-status.PNG)
-
-`local host and public adress` To access the server locally and also test how our Apache HTTP server can respond to requests from the Internet ![Public Address](./images/curl-on-terminal.PNG)
-
-On web ![public Address](./images/curl-on-web.PNG)
-
-## Installing mysql
-
-`sudo apt install mysql-serve` to acquire and install mysql server ![Mysql Server](./images/installing-msql.PNG) 
-
-`sudo mysql` to login into MYSQL console ![Login](./images/logging%20in%20mysql.PNG)
-
-`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';` setting default password ![default password](./images/change%20msql%20password.PNG)
-
-`sudo mysql_secure_installation` Changing the default password ![default password](./images/change-password.PNG)
+### What is an Operating System?
+An Operating System (OS) is a crucial software component that acts as an intermediary between computer hardware and user applications. It provides a platform for users to interact with the computer and efficiently manages hardware resources. The OS ensures that various software applications can run smoothly and that the hardware resources are utilized optimally.
 
 
-## Installing PHP
+### Tasks of an Operating System
+1. Process Management:
+Process Scheduling: Allocates CPU time to various processes.
+Process Creation and Termination: Initiates and terminates processes.
+2. Memory Management:
+Memory Allocation: Assigns and deallocates memory space for processes.
+Virtual Memory: Manages the use of secondary storage as an extension of RAM.
+3. File System Management:
+File Creation, Deletion, and Manipulation: Handles file-related operations.
+Directory Management: Organizes and maintains directories.
+4. Device Management:
+I/O Operations: Controls communication between devices and the computer.
+Device Drivers: Provides a software interface to hardware devices.
+5. Security and Protection:
+User Authentication: Controls access to the system.
+Data Protection: Ensures data integrity and confidentiality.
+6. User Interface:
+Command-Line Interface (CLI) and Graphical User Interface (GUI): Provides user interaction methods.
+Components of an Operating System
+- Kernel:
+The core component that manages system resources and provides essential services.
+- Shell:
+The user interface that interprets user commands and communicates with the kernel.
+- File System:
+Manages data storage, retrieval, and organization on storage devices.
+- Device Drivers:
+Software components that enable communication between the OS and hardware devices.
+- System Libraries:
+Collections of pre-compiled code used by applications for common tasks.
 
-`sudo apt install php libapache2-mod-php php-mysql` Installing PHP ![Install PHP](./images/installing%20php.PNG)
+### Types of Operating Systems
+1. Single-User, Single-Tasking OS:
+Supports one user and one task at a time.
+2. Single-User, Multi-Tasking OS:
+Allows a single user to perform multiple tasks concurrently.
+3. Multi-User OS:
+Supports multiple users accessing the system simultaneously.
+4. Real-Time OS:
+Prioritizes task execution based on time constraints.
+5. Network OS:
+Facilitates communication and resource sharing across a network.
 
-`apt search php- | less` Installing PHP Extension ![PHP EXTENSION](./images/PHP%20EXTENSION.PNG)
+### Linux Operating System
+#### Overview:
+A popular open-source Unix-like OS kernel.
 
+#### Key Features:
+- Multi-user and multi-tasking capabilities.
+- Robust security features.
+- Large software repository.
 
-## Creating a Virtual Host for my website
-
-`sudo mkdir /var/www/projectlamp` Creating a virtual host and also creating the directory for project lamb, `sudo a2ensite projectlamp` to enable the new virtual host after creating a new configuration ![VIRTUAL HOST DOMAIN](./images/VIIRTUAL%20HOST%20DOMAIN.PNG)
-
-
-
-`nano /var/www/your_domain/index.html` To create an index.html file in the location to test that the virtual host works as expected ![INDDEX.HTML](./images/index.html)
-
-
-`http://server_domain_or_IP` To access my IP adress on web ![Hello World!](./images/HELLO%20WORLD.PNG)
-
-
-`sudo nano /etc/apache2/mods-enabled/dir.conf` To allow index.php take precedence over index.html on the landing page ![Hello World!](./images/CHANGING%20THE%20BEHAVIOR%20OF%20INDEX.HTML)
-
-
-## Testing PHP Processing on your Web Server
-
-`nano /var/www/your_domain/info.php` To create a PHP test script to confirm that Apache is able to handle and process requests for PHP files ![PHP TEST!](./images/PHP%20TEST.PNG)
-
-
-`http://server_domain_or_IP` Web test for PHP ![PHP test on the web](./images/PHP%20WEB.PNG)
-
-
-## Testing Testing databse connection from php
+#### Components:
+- Linux Kernel: The core component managing hardware resources.
+- Shell: Commonly Bash, providing the user interface.
+GNU Utilities: Essential command-line tools.
+Package Management: Systems like APT or YUM for software installation.
 
 
-`sudo mysql -p` and `mysql> SHOW DATABASES` To show the databases available on my mysql ![Mysql databases](./images/mysql%20database.PNG)
+## Introduction to Virtualization and Virtual Machines
 
+### Server
+A server is a specialized computer or software that provides services or resources to other computers, known as clients, within a network. Servers can offer various functionalities, such as hosting websites, managing files, processing requests, and more. They are designed to be robust, reliable, and capable of handling multiple requests simultaneously.
 
-`mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");` and `mysql> SELECT * FROM example_database.todo_list;> SHOW DATABASES` To create Todo_list on MYSQL console ![Mysql Todo_list](./images/mysql%20todolist.PNG)
+#### Types of Servers:
+- Web Server: Hosts websites and serves web pages to users.
+- File Server: Manages and provides access to files within a network.
+- Database Server: Stores and retrieves data for database applications.
+- Application Server: Runs and manages applications for client computers.
+- Mail Server: Handles email communication and storage.
 
+### Virtualization
+Virtualization is a technology that enables the creation of virtual versions of computing resources, such as servers, storage, or networks. It allows multiple operating systems or applications to run on a single physical machine, optimizing resource utilization and enhancing scalability and flexibility.
 
+### What is a Virtual Machine?
+A Virtual Machine (VM) is a software emulation of a physical computer. It operates like an independent computer within a host system and runs its own operating system. VMs are created by virtualization software, which enables the execution of multiple VMs on a single physical machine.
+
+### What is a Hypervisor?
+A hypervisor, also known as a Virtual Machine Monitor (VMM), is a crucial component in virtualization technology. It sits between the hardware and the operating systems or VMs, managing the allocation of resources and ensuring isolation between different virtual environments. There are two types of hypervisors: Type 1 (bare-metal) runs directly on the hardware, while Type 2 (hosted) runs on top of an existing operating system.
+
+### Physical Machine vs Virtual Machine
+#### Physical Machine:
+- Hardware Dependency: Runs directly on physical hardware.
+- Resource Utilization: Limited to the capabilities of the physical hardware.
+- Isolation: Each physical machine operates independently.
+- Scalability: Requires additional physical hardware for scalability.
+#### Virtual Machine:
+- Hardware Independence: Operates on virtualized hardware provided by the hypervisor.
+- Resource Utilization: Optimizes resource sharing and allocation.
+- Isolation: VMs are isolated from each other, enhancing security.
+Scalability: Multiple VMs can run on a single physical machine, improving scalability.
